@@ -16,6 +16,7 @@ class Solution_ProDP_6{
         dp[1]=money[0];
         dp2[0]=0;
         dp2[1]=money[1];
+        //(지금 현재 내가 도둑질하고 있는 집 + 전전 집)과, (지금 도둑질 하지 않고, 바로 전집) 을 비교하여 큰 값
         for(int i=2;i<length-1;i++){
             dp[i]=Math.max(dp[i-2]+money[i],dp[i-1]);
         }
