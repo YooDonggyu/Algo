@@ -7,7 +7,73 @@ import java.util.Comparator;
 
 public class Bj1181 {
 	
+	public static void main(String[] args) {
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			int cnt = Integer.parseInt(br.readLine());
+			String[] str = new String[cnt];
+			for(int i=0; i<cnt; i++)
+				str[i] = br.readLine();
+			
+			
+			Arrays.sort(str, (o1, o2) -> o1.length() - o2.length());
+			
+			int j, len, len_temp;
+			for(int i=0; i<cnt; i++) {
+				len = str[i].length();
+				for(j=i+1; j<cnt; j++) {
+					len_temp = str[j].length();
+					if(len != len_temp) break;
+				}
+				Arrays.sort(str, i, j);
+				i=j-1;
+			}
+			
+			
+			for(int i=0; i<str.length; i++) {
+				if( i != str.length-1) {
+					if(str[i].equals(str[i+1])) ;
+					else System.out.println(str[i]);
+				}
+				else System.out.println(str[i]);
+			}
+			
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/*
+	public static void main(String[] args) {
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			int cnt = Integer.parseInt(br.readLine());
+			String[] str = new String[cnt];
+			for(int i=0; i<cnt; i++)
+				str[i] = br.readLine();
+			
+			
+			Arrays.sort(str, (o1, o2) -> (o1+o2).compareTo(o2+o1));
+			Arrays.sort(str, (o1, o2) -> o1.length() - o2.length());
+			
+			for(int i=0; i<str.length; i++) {
+				if( i != str.length-1) {
+					if(str[i].equals(str[i+1])) ;
+					else System.out.println(str[i]);
+				}
+				else System.out.println(str[i]);
+			}
+			
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
+	}
+	*/
+	
+	/*	
 	public static void main(String[] args) {
 		try {
 			//입력
@@ -49,4 +115,5 @@ public class Bj1181 {
 			e.printStackTrace();
 		}
 	}
+	*/
 }
