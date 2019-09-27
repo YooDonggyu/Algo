@@ -4,3 +4,5 @@
 .recommenders/
 Test/
 RemoteSystemsTempFiles/
+*.jar
+*.classes
