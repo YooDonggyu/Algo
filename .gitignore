@@ -4,5 +4,11 @@
 .recommenders/
 Test/
 RemoteSystemsTempFiles/
+*.class
+.mtj.tmp/
+*.class
 *.jar
-*.classes
+*.war
+*.ear
+*.nar
+hs_err_pid*
